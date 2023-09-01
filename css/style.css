@@ -1,0 +1,437 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+/* ---------- CSS Root Variables ---------- */
+:root {
+    --color-white: #ffffff;
+    --color-light: #f0ebeb;
+    --color-dark: #101c24;
+
+    --color-slate-extra-light: #e4e4e4;
+    --color-slate-light: #bbbcbd;
+    --color-slate: #939799;
+    --color-slate-dark: #53525c;
+    --color-slate-extra-dark: #2b3a3e;
+
+    --color-gray-extra-light: #e4e4e4;
+    --color-gray-light: #bbbcbd;
+    --color-gray: #939799;
+    --color-gray-dark: #53525c;
+    --color-gray-extra-dark: #2b3a3e;
+
+    --color-main-light: #d4f8b5;
+    --color-main: #a6f163;
+    --color-main-dark: #6ed613;
+
+    --color-primary-light: #caf3f1;
+    --color-primary: #96c3fc;
+    --color-primary-dark: #2772d4;
+
+    --color-succecs-light: #cef3bd;
+    --color-succecs: #a7ee86;
+    --color-succecs-dark: #54d419;
+
+    --color-danger-light: #f7d7d4;
+    --color-danger: #e96d62;
+    --color-danger-dark: #d82111;
+
+    --color-warning-light: #f8daad;
+    --color-warning: #f5b453;
+    --color-warning-dark: #e0931e;
+
+    --color-purple-light: #e0bef7;
+    --color-purple: #b670e6;
+    --color-purple-dark: #942ed8;
+
+    --icon-white: invert(100%) sepia(0%) saturate(2%) hue-rotate(34deg)
+        brightness(105%) contrast(101%);
+    --icon-light: invert(100%) sepia(2%) saturate(182%) hue-rotate(186deg)
+        brightness(115%) contrast(85%);
+    --icon-dark: invert(6%) sepia(7%) saturate(6388%) hue-rotate(164deg)
+        brightness(94%) contrast(89%);
+
+    --icon-slate-extra-light: invert(100%) sepia(70%) saturate(213%)
+        hue-rotate(1deg) brightness(115%) contrast(79%);
+    --icon-slate-light: invert(93%) sepia(5%) saturate(54%) hue-rotate(169deg)
+        brightness(81%) contrast(90%);
+    --icon-slate: invert(65%) sepia(7%) saturate(141%) hue-rotate(156deg)
+        brightness(90%) contrast(93%);
+    --icon-slate-dark: invert(33%) sepia(5%) saturate(850%) hue-rotate(206deg)
+        brightness(89%) contrast(85%);
+    --icon-slate-extra-dark: invert(18%) sepia(14%) saturate(748%)
+        hue-rotate(146deg) brightness(99%) contrast(91%);
+
+    --icon-gray-extra-light: invert(100%) sepia(70%) saturate(213%)
+        hue-rotate(1deg) brightness(115%) contrast(79%);
+    --icon-gray-light: invert(93%) sepia(5%) saturate(54%) hue-rotate(169deg)
+        brightness(81%) contrast(90%);
+    --icon-gray: invert(65%) sepia(7%) saturate(141%) hue-rotate(156deg)
+        brightness(90%) contrast(93%);
+    --icon-gray-dark: invert(33%) sepia(5%) saturate(850%) hue-rotate(206deg)
+        brightness(89%) contrast(85%);
+    --icon-gray-extra-dark: invert(18%) sepia(14%) saturate(748%)
+        hue-rotate(146deg) brightness(99%) contrast(91%);
+
+    --icon-main-light: invert(90%) sepia(28%) saturate(376%) hue-rotate(39deg)
+        brightness(103%) contrast(95%);
+    --icon-main: invert(92%) sepia(87%) saturate(573%) hue-rotate(32deg)
+        brightness(104%) contrast(89%);
+    --icon-main-dark: invert(76%) sepia(33%) saturate(2684%) hue-rotate(43deg)
+        brightness(98%) contrast(88%);
+
+    --icon-primary-light: invert(91%) sepia(20%) saturate(249%)
+        hue-rotate(125deg) brightness(97%) contrast(100%);
+    --icon-primary: invert(74%) sepia(11%) saturate(1734%) hue-rotate(182deg)
+        brightness(101%) contrast(98%);
+    --icon-primary-dark: invert(41%) sepia(98%) saturate(2919%)
+        hue-rotate(201deg) brightness(87%) contrast(89%);
+
+    --icon-succecs-light: invert(90%) sepia(23%) saturate(353%)
+        hue-rotate(49deg) brightness(99%) contrast(95%);
+    --icon-succecs: invert(82%) sepia(78%) saturate(287%) hue-rotate(41deg)
+        brightness(98%) contrast(89%);
+    --icon-succecs-dark: invert(54%) sepia(58%) saturate(608%) hue-rotate(57deg)
+        brightness(110%) contrast(104%);
+
+    --icon-danger-light: invert(88%) sepia(10%) saturate(459%)
+        hue-rotate(316deg) brightness(99%) contrast(95%);
+    --icon-danger: invert(51%) sepia(64%) saturate(1529%) hue-rotate(324deg)
+        brightness(101%) contrast(83%);
+    --icon-danger-dark: invert(20%) sepia(69%) saturate(6136%)
+        hue-rotate(357deg) brightness(87%) contrast(93%);
+
+    --icon-warning-light: invert(93%) sepia(10%) saturate(1580%)
+        hue-rotate(323deg) brightness(102%) contrast(95%);
+    --icon-warning: invert(63%) sepia(60%) saturate(432%) hue-rotate(353deg)
+        brightness(108%) contrast(92%);
+    --icon-warning-dark: invert(63%) sepia(69%) saturate(603%)
+        hue-rotate(346deg) brightness(91%) contrast(92%);
+
+    --icon-purple-light: invert(82%) sepia(41%) saturate(691%)
+        hue-rotate(199deg) brightness(97%) contrast(101%);
+    --icon-purple: invert(52%) sepia(89%) saturate(1906%) hue-rotate(232deg)
+        brightness(95%) contrast(89%);
+    --icon-purple-dark: invert(25%) sepia(80%) saturate(3102%)
+        hue-rotate(265deg) brightness(85%) contrast(99%);
+
+    --transition-1: all 350ms ease;
+    --transition-2: 350ms ease;
+    --transition-3: 350ms;
+}
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 12px;
+}
+
+body {
+    background-image: url(/img/IMG_20230402_172126_HDR.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: var(--color-dark);
+    font-family: "Roboto", sans-serif;
+    min-height: 100vh;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+section {
+    padding: 5rem 0;
+    background: var(--color-white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span,
+p {
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.7rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+h6 {
+    font-size: 1.25rem;
+}
+
+a {
+    font-size: 1.25rem;
+    color: var(--color-dark);
+}
+
+span {
+    font-size: 1.15rem;
+}
+
+p {
+    font-size: 1.4rem;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-main);
+    border-radius: 4px;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(0, 0, 0, 0.6);
+    backdrop-filter: blur(1px);
+    z-index: -1;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.content h1,
+.content span,
+.content h2 {
+    text-align: center;
+    color: var(--color-gray-extra-light);
+    font-size: 2.5rem;
+}
+
+.content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.content h1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.content a {
+    width: 100%;
+    background-color: var(--color-gray-dark);
+    text-align: center;
+    color: var(--color-gray-extra-light);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    transition: var(--transition-1);
+}
+
+.content a:hover {
+    background-color: var(--color-gray-extra-light);
+    color: var(--color-dark);
+}
+
+.content .kembali {
+    margin-top: 1rem;
+}
+
+.content__child .kembali {
+    margin-top: 1.8rem;
+}
+
+.content .kembali a,
+.content__child .kembali a {
+    width: 7rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    background: none;
+    border: 1px solid var(--color-gray-extra-light);
+    border-radius: 0.5rem;
+    position: relative;
+    transition: var(--transition-1);
+}
+
+.content__child .kembali a {
+    border-color: var(--color-light);
+    color: var(--color-light);
+}
+
+.content .kembali a::after,
+.content__child .kembali a::after {
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: var(--color-gray-extra-light);
+    border-radius: 0.3rem;
+    z-index: -1;
+    transition: var(--transition-1);
+}
+
+.content__child .kembali a::after {
+    background: var(--color-gray-extra-light);
+}
+
+.content .kembali a:hover::after,
+.content__child .kembali a:hover::after {
+    width: 100%;
+}
+
+.content__child .kembali a:hover {
+    color: var(--color-dark);
+}
+
+.content__child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 7px 2px rgb(200, 200, 200, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    z-index: 1000;
+    min-width: 35rem;
+}
+
+.content__child h2 {
+    text-align: center;
+    color: var(--color-light);
+}
+
+.content__child .daftar__desa {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 1rem 0;
+}
+
+.content__child .daftar__desa a {
+    margin: 0;
+    transition: var(--transition-1);
+    color: var(--color-light);
+}
+
+.content__child .daftar__desa a:hover {
+    color: var(--color-warning-dark);
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        background-image: url(/img/WhatsApp\ Image\ 2023-08-29\ at\ 13.34.16.jpg);
+    }
+
+    .content {
+        top: 54%;
+        left: 0;
+        transform: translate(0, -50%);
+        padding: 1rem;
+    }
+
+    .content h1 {
+        display: inline-block;
+    }
+
+    .content h1,
+    .content span {
+        font-size: 2.2rem;
+    }
+
+    .content h2 {
+        font-size: 2rem;
+    }
+
+    .content__child {
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        padding: 1.5rem;
+        background: none;
+        backdrop-filter: none;
+        box-shadow: none;
+        min-width: 0;
+        width: 100%;
+    }
+
+    .content__child h1,
+    .content__child h2 {
+        color: var(--color-gray-extra-light);
+        font-size: 1.8rem;
+    }
+
+    .content__child .daftar__desa a {
+        color: var(--color-gray-extra-light);
+    }
+
+    .content .kembali a,
+    .content__child .kembali a {
+        border: 2px solid;
+    }
+
+    .content__child .kembali a {
+        border-color: var(--color-gray-extra-light);
+        color: var(--color-gray-extra-light);
+    }
+
+    .content__child .kembali a::after {
+        background-color: var(--color-gray-extra-light);
+    }
+
+    .content__child .kembali a:hover {
+        color: var(--color-gray-extra-dark);
+    }
+
+    .content__child .daftar__desa__child a {
+        background: var(--color-gray-dark);
+        color: var(--color-gray-extra-light);
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        transition: var(--transition-1);
+    }
+
+    .content__child .daftar__desa__child a:hover {
+        background: var(--color-gray);
+        color: var(--color-gray-extra-dark);
+    }
+}
